@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Title for the webpage -->
+  <title>Home</title>
+    <!-- Link for Google font -->
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
+	<!-- External Css link -->
+	<link rel="stylesheet" href="style.css">
+	<!-- Link for swiper library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css'>
+    <!-- Fontawesome library for social media icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+<!-- Creating a header section for navbar and dropdown menu -->
+  <header>
+	<!-- Navbar with logo and links to other pages -->
+    <div class="navbar">
+		<!-- Logo image -->
+        <img class="logo" src="images/Untitled design (40).png">
+        <ul>
+            <li><a class="link" href="home.html">Home</a></li>
+			<li><a class="link" href="movies.html">Movies</a></li>
+            <li><a class="link" href="book.html">Books</a></li>
+            <li><a class="link" href="char.html">Characters</a></li>
+            <li><a class="link" href="shop.html">Shop</a></li>
+        </ul>
+		<!-- Using an image of bar for dropdown menu-->
+        <div class="bar_btn">
+            <img class="bar" src="images/Untitled design (42).png">
+        </div>
+    </div>  
+    <!-- Creating a dropdown for smaller screens -->
+    <div class="dropdown">
+		<li><a class="link" href="home.html">Home</a></li>
+		<li><a class="link" href="movies.html">Movies</a></li>
+		<li><a class="link" href="book.html">Books</a></li>
+		<li><a class="link" href="char.html">Characters</a></li>
+		<li><a class="link" href="shop.html">Shop</a></li>          
+    </div>
+  </header>
+
+<!-- Inserting audio player to add bg music -->
+<link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+<div id="audio-widget">
+	<!-- setting the audio to play on loop and automatically -->
+	<audio id="audio-player" controls loop autoplay> 
+		<!-- inserting harry potter theme audio -->
+		<source src="harry_potter_theme.mp3" type="audio/mp3">
+		Your browser does not support the audio element.
+	</audio>
+	<!-- Adding a button to toggle audio -->
+	<div id="audio-icon" onclick="toggleAudio()">
+		<!-- Using a volume up icon as audio widget-->
+		🔊
+	</div>
+  </div>
+
+<!-- Using Gsap to create an a card slider with 3d effect -->
+<div class="app">
+	<div class="cardList">
+		<!-- Left arrow to move slider -->
+		<button class="cardList__btn btn btn--left">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-left"></use>
+				</svg>
+			</div>
+		</button>
+		<!-- Creating a main div that contains three cards  -->
+		<div class="cards__wrapper">
+		<!-- First card -->
+      <div class="card current--card">
+        <div class="card__image">
+          <img src="images/main4.jpeg" alt="" />
+        </div>
+      </div>
+	  <!-- Second card -->
+      <div class="card next--card">
+        <div class="card__image">
+          <img src="images/HP_Anniversary_Reunion.webp" alt="" />
+        </div>
+      </div>
+      <!-- Third card -->
+      <div class="card previous--card">
+        <div class="card__image">
+          <img src="images/bkCollection.png" alt="" />
+        </div>
+      </div>
+    </div>  
+        <!-- Right arrow -->
+		<button class="cardList__btn btn btn--right">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-right"></use>
+				</svg>
+			</div>
+		</button>
+	</div>
+    <!-- A div which contains the text written on each card -->
+	<div class="infoList">
+		<div class="info__wrapper">
+			<!-- Text on first card -->
+			<div class="info current--info">
+				<h1 class="text name">8-Film Collection</h1>
+				<h4 class="text location">Journey beyond your <br>imagination</h4>
+			</div>
+            <!-- Text on second card -->
+			<div class="info next--info">
+				<h1 class="text name">Return to hogwarts</h1>
+				<h4 class="text location"> Welcome Back to where magic<br> began</h4>
+			</div>
+            <!-- Text on third card -->
+			<div class="info previous--info">
+				<h1 class="text name">7-books collection</h1>
+				<h4 class="text location">Step into the magical world of<br> Harry Potter! </h4>
+			</div>  
+		</div>
+	</div>
+    <!-- A div for the image on each card -->
+	<div class="app__bg">
+		<!-- Image on first card -->
+		<div class="app__bg__image current--image">
+			<img src="images/main4.jpeg"/>
+		</div>
+		<!-- Image on second card -->
+		<div class="app__bg__image next--image">
+			<img src="images/HP_Anniversary_Reunion.webp"/>
+		</div>
+		<!-- Image on third card -->
+		<div class="app__bg__image previous--image">
+			<img src="images/bkCollection.png"/>
+		</div>
+	</div>
+</div>
+
+<!-- Creating a loading message for the card slider -->
+<div class="loading__wrapper">
+	<div class="loader--text">Please Wait...</div>
+	<div class="loader">
+		<span></span>
+	</div>
+</div>
+
+<!-- Using svg icons for left and right arrows -->
+<svg class="icons" style="display: none;">
+	<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='328 112 184 256 328 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+	<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='184 112 328 256 184 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+</svg>
+
+<!-- Hogwarts invitation card GIF and heading -->
+<h1 class="world" >Your Hogwarts Invitation Awaits You!  </h1>
+<img class="letter" src="images/letter.gif">
+
+<!-- Hogwarts news section heading -->
+<h1 class="world" >Wizarding World News</h1>
+
+<!-- Reference: YouTube -->
+<!-- Creating a coverflow 3d slider to display news using swiper js  -->
+<!-- Swiper Slider -->
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+	   <!-- First slide image and text -->
+	  <div class="swiper-slide">
+		<div class="picture">
+		  <img src="images/Tokyo-Harry-Potter-1200x800.jpg.webp">
+		</div>
+		<div class="detail">
+		  <h3>Get a Sneak Peek into the <br>Harry Potter Theme Park <br>Opening in Tokyo This Week</h3>
+		</div>
+	  </div>
+	  <!-- Second slide image and text -->
+	  <div class="swiper-slide">
+		<div class="picture">
+		  <img src="images/hogwarts-legacy-ps5-ps4.large_.jpg.webp">
+		</div>
+		<div class="detail">
+		  <h3>Hogwarts Legacy Conquers<br> European Gaming Market</h3>
+		</div>
+	  </div>
+	  <!-- Third slide image and text -->
+	  <div class="swiper-slide">
+		<div class="picture">
+		  <img src="images/WBSTL-hogwarts-in-the-snow-great-hall-christmas-dinner-web-landscape.webp">
+		</div>
+		<div class="detail">
+		  <h3>“Hogwarts in the Snow”<br> Returns to Warner <br>Bros. Studio</h3>
+		</div>
+	  </div>
+	  <!-- Fourth slide image and text -->
+	  <div class="swiper-slide">
+		<div class="picture">
+		  <img src="images/HP_StoreSocial_158.jpg">
+		</div>
+		<div class="detail">
+		  <h3>World’s Largest ‘Harry <br>Potter’ Store Is <br> Officially Open</h3>
+		</div>
+	  </div>
+	  <!-- Fifth slide image and text -->
+	  <div class="swiper-slide">
+		<div class="picture">
+		  <img src="images/dubai store.jpeg">
+		</div>
+		<div class="detail">
+		  <h3>The Wizarding World<br> Shop adds magic to<br> Mall of the Emirates</h3>
+		</div>
+	  </div>
+	  <!-- Sixth slide image and text -->
+	  <div class="swiper-slide">
+		<div class="picture">
+		  <img src="images/Hogsmeade-Station.jpg">
+		</div>
+		<div class="detail">
+		  <h3>The Exhibition is coming to <br>Valencia, Spain</h3>
+		</div>
+	  </div>
+	</div>
+	<!-- A div for pagination -->
+	<div class="swiper-pagination"></div>
+  </div>
+
+  <h1 class="world">Quizzes</h1>
+  <div class="quiz-container">
+	<div class="quiz">
+		<img class="q1" src="images/quiz1.webp">
+		<div class="quiz-text">
+			<h3 class="quiz1">The Christmas mega <br>quiz</h3>
+            <a href="" class="qbtn">Start</a>
+		</div>
+	</div>
+	<div class="quiz">
+		<img class="q1" src="images/quiz2.webp">
+		<div class="quiz-text">
+			<h3 class="quiz1">Harry Potter's birthday mega quiz</h3>
+            <a href="" class="qbtn">Start</a>
+		</div>
+	</div>
+	<div class="quiz">
+		<img class="q1" src="images/quiz3.webp">
+		<div class="quiz-text">
+			<h3 class="quiz1">The who said it quiz: Harry, Ron or Hermione</h3>
+            <a href="" class="qbtn">Start</a>
+		</div>
+	</div>
+	<div class="quiz">
+		<img class="q1" src="images/quiz4.webp">
+		<div class="quiz-text">
+			<h3 class="quiz1">The wizarding world families quiz</h3>
+            <a href="" class="qbtn">Start</a>
+		</div>
+	</div>
+	<div class="quiz">
+		<img class="q1" src="images/quiz5.webp">
+		<div class="quiz-text">
+			<h3 class="quiz1">The Hogwarts letter <br>quiz</h3>
+            <a href="" class="qbtn">Start</a>
+		</div>
+	</div>
+	<div class="quiz">
+		<img class="q1" src="images/quiz6.webp">
+		<div class="quiz-text">
+			<h3 class="quiz1">The 'which Weasley said what?' quiz</h3>
+            <a href="" class="qbtn">Start</a>
+		</div>
+	</div>
+  </div>
+
+ <!-- Creating a footer with links to other websites annd social media icons-->
+  <footer class="footer">
+	<div class="d1">
+	  <a class="home" href="home.html">Home</a><br>
+	  <a class="about" href="movies.html">Movies</a><br>
+	  <a class="menu" href="book.html">Books</a><br>
+	  <a class="gallery" href="char.html">Characters</a><br>
+	  <a class="reviews" href="shop.html">Shop</a><br>
+	</div>
+	<div class="d2">
+		<h4>About Us</h4><br>
+		<h4>Press</h4><br>
+		<h4>FAQs</h4>
+    </div>
+	<!-- Using svg icons for social media links -->
+    <h4 class="follow">Find Us On</h4>
+	<div class="social-icons">
+		<a href="#"  title="facebook"> 
+		  <i class="fab fa-facebook-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="twitter"> 
+		  <i class="fab fa-twitter-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="instagram">  
+		  <i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="youtube">
+		  <i class="fab fa-youtube-square" aria-hidden="true"></i>
+		</a>
+	  </div>
+</footer>
+
+
+<!-- GSAP library -->
+<script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+
+<!-- External Js file -->
+<script  src="hp.js"></script>
+
+
+<!-- Swiper library -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js'></script>
+
+<script>
+    var swiper = new Swiper(".swiper-container", {
+        effect: "coverflow",    // Setting transition effect to 'coverflow' 
+        grabCursor: true,       // Allowing grab cursor for slides
+        centeredSlides: true,    // Making the active slide in the center
+        slidesPerView: "auto",  // Calculate the number of slides to display automatically
+        coverflowEffect: {     // Configuring the coverflow effect
+          rotate: 20,          // Setting an angle of rotation for slides
+          stretch: 0,          // Setting the stretching of non-active slide to zero
+          depth: 350,          // setting depth of 3d effect 
+          modifier: 1,         // Modifying depth effect
+          slideShadows: true     // Enabling shadow effect on slides
+        },
+        pagination: {               
+          el: ".swiper-pagination"    // Configuring pagination
+        },
+		initialSlide: 2     // Setting slide number 2 as first slide 
+      });
+</script>
+
+<!-- Background music Js -->
+<script>
+	//  creating a function to toggle play/pause and update the volume icon
+	function toggleAudio() {
+		// Getting the audio player and audio icon elements
+		var audioPlayer = document.getElementById('audio-player');
+		var audioIcon = document.getElementById('audio-icon');
+  
+		// Checking if audio player is paused
+		if (audioPlayer.paused) {
+			// If paused,  then play the audio
+			audioPlayer.play();
+			// Changing the icon to volume up when playing
+			audioIcon.textContent = '🔊';    // Volume up icon
+		} else {
+			// If playing, pause the audio
+			audioPlayer.pause();
+			// Change the icon to mute when paused
+			audioIcon.textContent = '🔇';    // Volume off icon
+		}
+	}
+  </script>
+</body>
+</html>
