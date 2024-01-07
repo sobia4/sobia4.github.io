@@ -1,0 +1,753 @@
+/* Importing fonts from google fonts and cdn fonts */
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=PT+Serif&display=swap');
+
+/* NAVBAR */
+/* setting the size and position of dropdown menu bar */
+.bar {
+  width: 45px;
+  height: 35px;
+  margin-right: 50px;
+}
+img {
+  width: 175px;
+  height: 130px;
+}
+/* setting the size and position of logo */
+.logo {
+  width: 175px;
+  height: 130px;
+}
+/* setting the html and body height to 100% */
+html, body {
+  height: 100%;
+}
+/* styling the navbar list */
+li {
+  list-style: none;
+  font-size: 25px;
+}
+/* setting a color for nav links */
+.link{
+    text-decoration: none;  
+    color: rgb(229, 175, 40);
+}
+/* setting a color for nav links  when hovered */
+.link:hover{
+    color: white;
+}
+/* positioning the header and givivng it full width */
+header {
+  position: relative;
+  width: 100%;
+}
+/* styling the navbar */
+.navbar {
+  width: 100%;
+  height: 90px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;      /* adding space between the links*/
+  z-index: 1000;      /* adding higher z-index value for proper stacking */
+}
+/* giving gap between links and displaying them on right side */
+.navbar ul {
+  display: flex;
+  gap: 130px;
+  margin-right: 100px;
+  color: rgb(229, 175, 40);
+}
+/* setting a pointer cursor on dropdown bar */
+.bar_btn {
+  cursor: pointer;
+  display: none;
+}
+/* Adding background image to the whole body */
+body {
+  background-image: url("images/bg.png");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 40px;
+  top: 60px;
+  width: 300px;
+  background: rgba(235, 235, 235, 0.1);    /* adding bg color to dropdown menu */
+  -webkit-backdrop-filter: 10px;
+  backdrop-filter: 10px;
+  overflow: hidden;
+  height: 0px;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);     /* setting a transition height to dropdown menu*/  
+  color: rgb(229, 175, 40);
+}
+/* setting a higher z-index value to the dropdown when it opens so it appears on top of everything */
+.dropdown.open {
+  height: 255px;
+  z-index: 1000;
+}
+/* styling the dropdown links */
+.dropdown li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar Responsivness */
+@media (max-width: 992px) {
+  .navbar ul {
+    display: none;
+  }
+  .bar_btn {
+    display: block;
+  }
+  .dropdown {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  .dropdown {
+    left: 2rem;
+    width: unset;
+  }
+}
+
+/* resetting css */
+*{
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+/* setting variables for colors and fonts */
+:root{
+    --first-col: hsl(200, 61%, 47%);
+    --title-col: hsl(0, 0%, 15%);
+    --text-col: hsl(0, 0%, 35%);
+    --body-col: hsl(0, 0%, 95%);
+    --box--col: hsl(0, 0%, 100%);
+    --body-font: font-family: 'Courgette', cursive;
+    --h2-font-size: 25px;
+    --small-font-size: 20px;
+/* setting varibles for responsive font sizes */
+@media screen and (min-width: 1120px){
+    --h2-font-size: 25px;
+    --small-font-size: 20px;
+}
+}
+/* styling the main container of the cards */
+.box{
+    display: grid;
+    margin-inline: 10%;
+    position: relative;
+    left: 3%;
+    place-items: center;
+    top: 12%;
+}
+
+.cont{
+  /* styling each individual card */
+    &__card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        align-items: center; 
+    }
+    /* setting grid and row gap between cards */
+    &__box{
+        display: grid;
+        row-gap: 3.5rem;
+    }
+    /* styling the image container */
+    &__article{
+        background: linear-gradient(rgb(255, 229, 181), rgb(196, 164, 106));
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 100px;
+        margin-right: 60px;
+        box-sizing: border-box;
+        transition: 0.8s;        /* adding transitions*/
+        width: 300px; 
+    }
+    /* setting dimensions of the images in cards */
+    &__img{
+        border-radius: 1.5rem;
+        width: 300px;
+        height: 300px;
+    }
+    /* styling the text content in cards */
+    &__content{
+        padding: 1.5rem;
+        width: 280px;
+        background-color: var(--box--col);
+        border-radius: 1rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -9rem;
+        opacity: 0;
+        transition: opacity 1s 1s;
+        margin-inline: auto;
+    }
+    /* styling the amount text*/
+    &__description{
+        font-size: var(--small-font-size);
+        margin-bottom: .25rem;
+        display: block;
+        color: hsl(82, 57%, 37%);
+    }
+    /* styling the title text */
+    &__title{
+        color: var(--title-col);
+        font-size: var(--h2-font-size);
+        font-weight: 500;
+        margin-bottom: .75rem;
+    }
+    /* styling the button in the card */
+    &__button{
+        font-size: var(--small-font-size);
+        text-decoration: none;
+        color: var(--first-col);
+        font-weight: 500;
+        /* adding hover effect to button */
+        &:hover{
+            text-decoration: underline;
+            color: rgb(165, 108, 42);
+        }
+    }
+    /* adding hover animations to the cards */
+    &__article:hover &__content{
+        opacity: 1;
+        transition: opacity .3s;
+        animation: show-data 1s forwards;
+    }
+    &__article:hover{
+        animation: remove-overflow 2s forwards;
+        border: 5px solid rgb(165, 92, 52);
+    }
+    &__article:not(:hover){
+        animation: show-overflow 2s forwards;
+    }
+    &__article:not(:hover) &__content{
+        animation: remove-data 1s forwards;
+    }
+}
+/* keyframes for the card animation  */
+@keyframes show-data {
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow {
+    0%{
+        pointer-events: none;
+        overflow: initial;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
+
+/* styling the image */
+.person {
+    max-width: 100%;
+    height: auto; 
+    width: 100%;
+    position: relative;
+    margin-top: 120px;
+}
+
+    /* Slider */
+    .main{
+      margin-top: 10px;
+      max-width: 100%;
+    }
+    /* Hide all images initially */
+    .main .s {
+      display: none;
+      width: 100%;
+      height: 700px;
+      background-size: cover;
+    
+    }
+    /* Display the first image */
+    .main .s:first-child {
+      display: block;
+    }
+    .s {
+      width: 100%;
+      height: 50vw;
+    }
+    // responsivness for smaller screens
+    @media (max-width: 600px) {
+      .main .s {
+          height: auto; 
+      }
+    }
+    @media screen and (max-width:480px) {
+      .main .s {
+        height: 200px;
+      }
+    }
+
+  /* Styling the heading and positioning it in the center */
+  .shop{
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 7%;
+    letter-spacing: 3px;
+}
+  /* creating a vertical line besides heading */
+  .shop::before,
+  .shop::after {
+    background-color: white;
+    content: "";
+    display: inline-block;
+    width: 8%;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+  }  
+  .shop::before {
+    right: 0.7em;
+    margin-left: -50%;
+  } 
+  .shop::after {
+    left: 0.7em;
+    margin-right: -50%;
+  }
+
+/* Footer */
+.footer {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
+  }
+  /* Adding a bg image to footer */
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/landscape-mountains-silhouette-8k.jpg') center/cover;
+    filter: blur(8px);      /* bluring the footer */
+    z-index: -1;           /* setting the z-index value so that text appears on top as footer image is blurred */
+  }
+  /* first column of all webpages in footer */
+  .d1 {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 17%;
+    font-size: 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  /* links to other webpages in footer */
+  .d1 a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+  }
+  /* second column in footer */
+  .d2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 45%;
+    font-size: 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    bottom: 320px;
+  }
+  /* social media corner */
+  .follow{
+    font-size: 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    bottom: 430px;
+    margin-left: 72.6%;
+  }
+  /* styling the social media icons */
+  .social-icons{
+    position: relative;
+    bottom: 410px;
+    right: -72%;
+    text-align: center;
+    width: 200px;
+  }
+  .social-icons a{
+    color:#fff;
+    line-height:30px;
+    font-size:30px;
+    margin: 0 5px;
+    text-decoration:none;
+  }
+  /* adding animation to svg icons */
+  .social-icons a i{
+    line-height:30px;
+    font-size:30px;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+  }
+  /* adding animation to svg icons when hovered */
+  .social-icons a:hover i{
+    box-shadow: 0px 0px 10px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+  }
+
+
+  /* Responsivness for iPhone4 */
+  @media only screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) {
+    .d2{
+      bottom: 180px;
+      font-size: 13px;
+
+    }
+    .d1{
+        margin: 9% 16%;
+        font-size: 13px;
+      }
+    .follow{
+      bottom: 270px;
+      font-size: 13px;
+      margin-left: 70%;
+    }
+    .social-icons{
+      bottom: 260px;
+      width: 80px;
+      right: -67%;
+    }
+    .social-icons a{
+        line-height:30px;
+        font-size:20px;
+        margin: 0px 7px ;
+    }
+    .social-icons a i{
+        font-size: 18px;
+    }
+    .box{
+        top: 13%;
+    }
+    .shop{
+        font-size: 18px; 
+    }
+    .bar{
+        margin-right: 30px;
+        width: 40px;
+        height: 30px;
+    }
+    .logo{
+        width: 42%;
+        height: 97%;
+    }
+     .person{
+        margin-top: 5%;
+        height: 130px;
+ 
+     }
+     .footer{
+        height: 200px;
+        width: 100%;
+    }
+    .cont__article{
+        width: 200px;
+        height: 200px;
+        left: 7%;
+    }
+    .cont__img{
+        width: 200px;
+        height: 200px;
+    }
+    .cont__content{
+        width: 180px;
+        padding: .7rem;
+    }
+    .cont__title{
+        font-size: 18px;
+    }
+    .cont__description{
+        font-size: 15px;
+    }
+    .cont__button{
+        font-size: 15px;
+    } 
+    .dropdown.open {
+      height: 240px;
+ 
+    }
+    li{
+      font-size: 20px;
+    }
+  }
+    
+  /* Responsivness for iPhoneX */
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .d2{
+      bottom: 195px;
+      font-size: 15px;
+      margin: 0 48%;
+    }
+    .d1{
+        font-size: 15px;
+        margin-top: 10%;
+    }
+    .follow{
+      bottom: 300px;
+      font-size: 15px;
+    }
+    .person{
+        margin-top: 0;
+        height: 140px;
+    }
+    .social-icons{
+      width: 100px;
+      bottom: 300px;
+      right: -67%;
+    }
+    .social-icons a{
+        line-height:40px;
+        font-size:20px;
+        margin: 0px 10px;
+    }
+    .social-icons a i{
+        font-size: 18px;
+    }
+    .box{
+        top: 7%;
+    }
+    .shop{
+        font-size: 23px;
+  
+        top: 3%;
+    }
+    .footer{
+        height: 250px;
+    }
+    .cont__article{
+        width: 200px;
+        height: 200px;
+        left: 7%;
+    }
+    .cont__img{
+        width: 200px;
+        height: 200px;
+    }
+    .cont__content{
+        width: 180px;
+        padding: .7rem;
+    }
+    .cont__title{
+        font-size: 18px;
+    }
+    .cont__description{
+        font-size: 15px;
+    }
+    .cont__button{
+        font-size: 15px;
+    }
+    .logo {
+      width: 155px;
+      height: 110px;
+  }
+  }
+
+
+  /* Responsiveness for iPad*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .d2{
+      bottom: 293px;
+    }
+    .follow{
+      bottom: 430px;
+      margin-left: 66%;
+    }
+    .social-icons{
+      bottom: 410px;
+      right: -65%;
+    }
+    .person{
+        margin-top: 10%;
+    }
+    .d1{
+        margin: 7% 16%;
+    }
+    .box{
+        top: 10%;
+    }
+    .main .s {
+      height: 380px;
+    }
+  }
+
+
+  /* Responsiveness for Google pixel */
+  @media only screen and (device-width: 411px) and (device-height: 731px) {
+     .d2{
+        margin: 17% 46%;
+        font-size: 15px;
+        bottom: 290px;
+     }
+    .follow{
+      bottom: 465px;
+      font-size: 15px;
+    }
+    .social-icons{
+      width: 110px;
+      bottom: 460px;
+      left: 68%;
+    }
+    .social-icons a{
+        line-height:40px;
+        font-size:20px;
+        margin: 0 11px;
+    }
+    .social-icons a i{
+        font-size: 20px;
+    }
+    .box{
+        top: 8%;
+    }
+    .person{
+        margin-top: 60px;
+        height: 23%;
+    }
+    .footer{
+        height: 250px;
+    }
+    .d1{
+        font-size: 15px;
+        margin: 10% 16%;
+    }
+    .shop{
+        font-size: 25px;
+        margin-bottom: 10%;
+    }
+    .logo{
+        width: 38%;
+        height: 100%;
+    }
+    .cont__article{
+        width: 230px;
+        height: 230px;
+        left: 7%;
+    }
+    .cont__img{
+        width: 230px;
+        height: 230px;
+    }
+    .cont__content{
+        width: 200px;
+        padding: .9rem;
+    }
+    .cont__title{
+        font-size: 20px;
+    }
+    .cont__description{
+        font-size: 17px;
+    }
+    .cont__button{
+        font-size: 17px;
+    }
+  }
+
+
+/* Moving everything down when dropdown is opens*/
+body.move-down {
+  overflow: hidden;
+}
+
+.header.move-down {
+  width: 100%;
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header.move-down .dropdown {
+  top: 150px; 
+}
+
+body.move-down .main,
+body.move-down .box,
+body.move-down .person,
+body.move-down .footer,
+body.move-down .shop {
+  transform: translateY(210px); 
+  transition: transform 0.2s;
+}
+
+
+/* styling audio widget container */
+#audio-widget {
+  position: relative;
+  z-index: 1000;
+}
+/* Hiding the audio element */
+#audio-player {
+  display: none; 
+}
+/* styling audio icon button */
+#audio-icon {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 30px; 
+}
+
