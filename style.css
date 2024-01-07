@@ -1,0 +1,814 @@
+/* Importing the harry potter font from google fonts */
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+/* Creating variables for card transitions and dimensions */
+:root {
+    --card-width: 200px;
+    --card-height: 300px;
+    --card-transition-duration: 800ms;
+    --card-transition-easing: ease;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styling the left and right arrow buttons */
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  button:focus {
+    outline: none;
+    border: none;
+  }
+  
+  /* styling the main container for gsap slides */
+  .app {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* styling the background image of slider */
+  .app__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+  }
+  .app__bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.4;
+  }
+  /* setting dimensions to bg image of slider */
+  .app__bg__image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+    width: 100%;
+    height: 95%;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    overflow: hidden;
+  }
+  /* Styling the image in each slide */
+  .app__bg__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* first style */
+  .app__bg__image.current--image {
+    opacity: 1;
+    --image-translate-offset: 0;
+  }
+  .app__bg__image.previous--image, .app__bg__image.next--image {
+    opacity: 0;
+  }
+  /* second style */
+  .app__bg__image.previous--image {
+    --image-translate-offset: -25%;
+  }
+  /* third style */
+  .app__bg__image.next--image {
+    --image-translate-offset: 25%;
+  }
+  /* Hiding specific bg images */
+  .app__bg__image.fourth,
+  .app__bg__image.fifth,
+  .app__bg__image.sixth,
+  .app__bg__image.seventh,
+  .app__bg__image.eighth {
+    opacity: 0;
+  }
+  /* styling the card list container */
+  .cardList {
+    position: absolute;
+    width: 80vw;
+    height: auto;
+  }  
+  /* Styles for nav buttons in the card list */
+  .cardList__btn {
+    --btn-size: 35px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+  /* left navigation button */
+  .cardList__btn.btn--left {
+    left: -5%;
+  }
+  /* Right navigation button */
+  .cardList__btn.btn--right {
+    right: -5%;
+  }
+  /* styling the button icons */
+  .cardList__btn .icon {
+    width: 100%;
+    height: 100%;
+  }
+  /* styling icon svg images */
+  .cardList__btn .icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  /* styling card list wrapper */
+  .cardList .cards__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+  }
+  /* styling each individual card */
+  .card {
+    --card-translateY-offset: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+    display: inline-block;
+    width: var(--card-width);
+    height: var(--card-height);
+    transition: transform var(--card-transition-duration) var(--card-transition-easing);
+    user-select: none;
+  }
+  /*  card overlay  */
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+    opacity: calc(1 - var(--opacity));
+  }
+  /* card image container */
+  .card__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  /* styling the card image */
+  .card__image img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* so the img covers the entire card */
+  }
+  /* styling the initial card */
+  .card.current--card {
+    --current-card-rotation-offset: 0;   /* Setting card rotation to 0*/
+    --card-translateX-offset: 0;
+    --card-rotation-offset: var(--current-card-rotation-offset);
+    --card-scale-offset: 1.2;
+    --opacity: 0.8;
+  }
+  /* styling the card before current card*/
+  .card.previous--card {
+    --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+    --card-rotation-offset: 25deg;   /* Setting card rotation to 25deg */
+  }
+  /* styling the card after initial card */
+  .card.next--card {
+    --card-translateX-offset: calc(var(--card-width) * 1.1);
+    --card-rotation-offset: -25deg;      /* Setting card rotation to -25deg */
+  }
+  /* Setting opacity and card scale for both previous and next cards */
+  .card.previous--card, .card.next--card {
+    --card-scale-offset: 0.9;
+    --opacity: 0.4;
+  }
+  /* styling infoList container */
+  .infoList {
+    position: absolute;
+    width: calc(3 * var(--card-width));
+    height: var(--card-height);
+    pointer-events: none;
+  }
+  /* Styling the info wrapper within the info list */
+  .infoList .info__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    perspective: 1000px;
+    transform-style: preserve-3d;  /* gives the text 3d effect*/
+  }
+  /* styling each individual info elements */
+  .info {
+    margin-bottom: calc(var(--card-height) / 8);
+    margin-left: calc(var(--card-width) / 1.5);
+    transform: translateZ(2rem);
+    transition: transform var(--card-transition-duration) var(--card-transition-easing);   /* adding transition */
+  }
+  /* styling the text on the cards */
+  .info .text {
+    position: relative;
+    font-family: "Montserrat";
+    font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
+    font-size: 30px;
+    white-space: nowrap;
+    color: #fff;
+    width: fit-content;
+  }
+  /* Turning the text into uppercase letters */
+  .info .name,
+  .info .location {
+    text-transform: uppercase;
+  /* setting font weight and other styles for text  */
+  }
+  .info .location {
+    font-weight: 800; 
+  }
+  .info .location {
+    --mg-left: 40px;
+    --text-size-offset: 0.12;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: var(--mg-left);
+    margin-bottom: calc(var(--mg-left) / 2);
+    padding-bottom: 0.8rem;
+  }
+  /* styling the before and after text in the card */
+  .info .location::before, .info .location::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    left: 0%;
+    transform: translate(calc(-1 * var(--mg-left)), -50%);
+  }
+  .info .location::before {
+    top: 50%;
+    width: 20px;
+    height: 5px;
+  }
+  .info .location::after {
+    bottom: 0;
+    width: 60px;
+    height: 2px;
+  }
+  /* setting the opacity for current card */
+  .info.current--info {
+    opacity: 1;
+    display: block;
+  }
+  /* setting the opacity for previous and next card */
+  .info.previous--info, .info.next--info {
+    opacity: 0;
+    display: none;
+  }
+  /* styling the loading wrapper */
+  .loading__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    z-index: 200;    /* giving it a higher z index value for proper stacking*/
+  }
+  /* styling the text in loading wrapper */
+  .loading__wrapper .loader--text {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+  }
+  .loading__wrapper .loader {
+    position: relative;
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .loading__wrapper .loader span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);   /* setting scaleX to 0*/
+    transform-origin: left;
+  }
+  
+  /* Adding media query for responsivness of larger screens */
+  @media only screen and (min-width: 800px) {
+    :root {
+      --card-width: 250px;
+      --card-height: 400px;
+    }
+  }
+  .support {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    display: flex;
+  }
+  .support a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.8rem;
+    backface-visibility: hidden;
+    transition: all 150ms ease;
+  }
+  .support a:hover {
+    transform: scale(1.1);
+  }
+  
+
+/* NAVBAR */
+/* setting the size and position of dropdown menu bar */
+  .bar{
+      width: 45px;
+      height: 35px;
+      margin-right: 50px;
+  }
+  img{
+      width: 175px;
+      height: 130px;    
+  }
+  /* setting the size and position of logo */
+  .logo {
+    width: 175px;
+    height: 130px;
+  }
+  /* setting the html and body height to 100% */
+  html, body{
+      height: 100%;
+  }
+  /* styling the navbar list */
+  li{
+      list-style: none;
+      font-size: 25px;
+  }
+  /* setting a color for nav links */
+  .link{
+      text-decoration: none;  
+      color: rgb(229, 175, 40);
+  }
+/* setting a color for nav links  when hovered */
+  .link:hover{
+      color: white;   
+  }
+  /* positioning the header and givivng it full width */
+  header{
+      position: relative;
+      width: 100%;
+  }
+  /* styling the navbar */
+  .navbar{
+      width: 100%;
+      height: 90px;   
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between ;     /* adding space between the links*/
+  }
+  /* giving gap between links and displaying them on right side */
+  .navbar ul{
+      display: flex;   
+      gap: 130px;
+      margin-right: 100px;
+      color: rgb(229, 175, 40);
+  }
+  /* setting a pointer cursor on dropdown bar */
+  .bar_btn{
+      cursor: pointer;
+      display: none;
+  }
+  /* Adding background image to the whole body */
+  body{
+      background-image: url("images/bg.png");
+      background-size: cover;      
+      background-position: center;
+  } 
+
+  /* Dropdown menu */
+  .dropdown{
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 60px;
+    width: 300px;
+    background: rgba(235, 235, 235, 0.1);  /* adding bg color to dropdown menu */
+    -webkit-backdrop-filter: 10px;
+            backdrop-filter: 10px;
+    overflow: hidden;              
+    height: 0px;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);   /* setting a transition height to dropdown menu*/
+    color: rgb(229, 175, 40);
+  }
+  /* setting a higher z-index value to the dropdown when it opens so it appears on top of everything */
+  .dropdown.open{
+      height: 255px;
+      z-index: 1000;
+  }
+  /* styling the dropdown links */
+  .dropdown li{
+      padding: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+
+  /* setting card width and height for larger screens */
+  @media only screen and (min-width: 800px) {
+      :root {
+        --card-width: 250px;
+        --card-height: 400px;
+      }
+    } 
+
+  /* Responsivness of navbar for larger screens */
+  @media (max-width: 992px) {
+  .navbar ul {
+      display: none;
+  }
+  .bar_btn {
+      display: block;
+  }
+  .dropdown {
+      display: block;
+      right: 2rem;
+      width: unset;
+  }
+}
+  
+  /* Styling the headings and positioning them in the center */
+  .world {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 38px;
+    margin-right: 0px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'Harry Potter', sans-serif;
+    overflow: hidden;
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+  /* creating a vertical line besides headings */
+  .world::before,
+  .world::after {
+    background-color: white;
+    content: "";
+    display: inline-block;
+    width: 8%;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+  }  
+  .world::before {
+    right: 0.7em;
+    margin-left: -50%;
+  } 
+  .world::after {
+    left: 0.7em;
+    margin-right: -50%;
+  }
+  /* Setting dimensions for letter gif */
+  .letter {
+    max-width: 100%; 
+    width: 33%; 
+    height: auto; 
+    margin: 2% auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+    
+    /* Swiper Slider */
+    /* setting padding and width for the main slider container */
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+
+    }   
+    /* styling the slides  */
+    .swiper-slide {
+      width: auto !important;    /* setting the width to auto */
+      background-position: center;
+      background-size: cover;
+      background-color: #fff;
+      overflow: hidden;
+      border-radius: 8px; 
+    }
+    /* setting the dimensions of the images in each slide  */
+    .picture {
+      width: 320px;
+      height: 320px;
+      overflow: hidden;    /* setting overflow to hidden so image stays in slide*/
+    }
+    /* making the image cover the entire card */
+    .picture img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* styling the news text in card */
+    .detail {
+      padding: 25px 23px;
+      font-weight: 600;
+      text-align: center;
+    }
+    /* styling the news heading text in card */
+    .detail h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+    
+
+     /* styling the card container for quizzes */
+    .quiz-container{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       margin-top: -30px;
+    }
+    /* styling individual cards */
+    .quiz{
+      background-color: #f0f0f0;
+      width: 325px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin: 60px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.2);     /* adding box-shadow to cards */    
+    }
+    /* adding hover effect to image */
+    .q1:hover{
+      transform: scale(1.1);
+    }
+    /* setting the dimensions of images in cards */
+    .q1{
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;    /* adding zoom in transition effect */
+    }
+    .quiz-text{
+      padding: 16px;
+    }
+    /* styling the text in cards */
+    .quiz1{
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+    /* styling the start button in cards */
+    .qbtn{
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      background-color: #152256;
+      margin-top: 16px;
+      color: white;
+      font-size: 18px;
+    }
+    /* changing bg color of button when hovered */
+    .qbtn:hover{
+      background-color: rgb(229, 175, 40);
+    }
+
+
+    /* Footer */
+    .footer {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      margin-top: 9%;
+    }
+    /* Adding a bg image to footer */
+    .footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/landscape-mountains-silhouette-8k.jpg') center/cover;
+      filter: blur(8px);        /* bluring the footer */
+      z-index: -1;         /* setting the z-index value so that text appears on top as footer image is blurred */
+    }
+    /* first column of all webpages in footer */
+    .d1 {
+      display: flex;
+      flex-direction: column;
+      margin: 5% 17%;
+      font-size: 20px;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    /* links to other webpages in footer */
+    .d1 a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+    /* second column in footer */
+    .d2 {
+      display: flex;
+      flex-direction: column;
+      margin: 0 45%;
+      font-size: 20px;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      position: relative;
+      bottom: 320px;
+    }
+    /* social media corner */
+    .follow{
+      font-size: 20px;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      position: relative;
+      bottom: 430px;
+      margin-left: 72.6%;
+    }
+    /* styling the social media icons */
+    .social-icons{
+      position: relative;
+      bottom: 410px;
+      right: -72%;
+      text-align: center;
+      width: 200px;
+    }
+    .social-icons a{
+      color:#fff;
+      line-height:30px;
+      font-size:30px;
+      margin: 0 5px;
+      text-decoration:none;    
+    }
+    /* adding animation to svg icons */
+    .social-icons a i{
+      line-height:30px;
+      font-size:30px;
+      -webkit-transition: all 200ms ease-in;
+      -webkit-transform: scale(1); 
+      -ms-transition: all 200ms ease-in;
+      -ms-transform: scale(1); 
+      -moz-transition: all 200ms ease-in;
+      -moz-transform: scale(1);
+      transition: all 200ms ease-in;
+      transform: scale(1);
+    }
+    /* adding animation to svg icons when hovered */
+    .social-icons a:hover i{
+      box-shadow: 0px 0px 10px #000000;
+      z-index: 2;
+      -webkit-transition: all 200ms ease-in;
+      -webkit-transform: scale(1.5);
+      -ms-transition: all 200ms ease-in;
+      -ms-transform: scale(1.5);   
+      -moz-transition: all 200ms ease-in;
+      -moz-transform: scale(1.5);
+      transition: all 200ms ease-in;
+      transform: scale(1.5);
+    }
+
+
+    /* Responsivness for iPhone4 */
+    @media only screen and (device-width: 320px) and (device-height: 480px){
+      .d2{
+        bottom: 290px;
+      }
+      .follow{
+        bottom: 410px;
+      }
+      .social-icons{
+        bottom: 390px;
+      }
+      .app{
+        height: 63%;
+      }
+      .bar{
+        width: 65px;
+        height: 55px;
+      }
+      .logo{
+        width: 240px;
+        height: 160px;
+      }
+    }
+
+    /* Responsivness for iPhoneX */
+    @media only screen and (device-width: 375px){
+      .d2{
+        bottom: 290px;
+      }
+      .follow{
+        bottom: 410px;
+      }
+      .social-icons{
+        bottom: 390px;
+      }
+      .app{
+        height: 40%;
+      }
+      .bar{
+        width: 65px;
+        height: 55px;
+      }
+      .logo{
+        width: 240px;
+        height: 160px;
+      }
+    }
+
+      /* Responsiveness for iPad*/
+    @media only screen and (min-device-width: 768px){
+      .d2{
+        bottom: 290px;
+      }
+      .follow{
+        bottom: 410px;
+      }
+      .social-icons{
+        bottom: 390px;
+      }
+
+      .bar{
+        width: 55px;
+        height: 45px;
+      }
+ 
+    }
+    /* Responsivness for Google pixel */
+    @media only screen and (device-width: 411px) and (device-height: 731px) {
+      .d2{
+        bottom: 290px;
+      }
+      .follow{
+        bottom: 410px;
+      }
+      .social-icons{
+        bottom: 390px;
+      }
+      .app{
+        height: 60%;
+      }
+      .bar{
+        width: 75px;
+        height: 65px;
+      }
+      .logo{
+        width: 240px;
+        height: 170px;
+      }
+    }
+    
+ 
+/* styling audio widget container */
+#audio-widget {
+  position: relative;
+  z-index: 1000;
+}
+/* Hiding the audio element */
+#audio-player {
+  display: none; 
+}
+/* styling audio icon button */
+#audio-icon {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 30px; 
+}
