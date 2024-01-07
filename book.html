@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <!-- Title for the webpage -->
+  <title>Harry Potter</title>
+    <!-- External Css link -->
+    <link rel="stylesheet" href="book.css">
+    <!--  Font Awesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+<!-- Creating a header section for navbar and dropdown menu -->
+    <header>
+        <!-- Navbar with logo and links to other pages -->
+        <div class="navbar">
+            <!-- Logo image -->
+            <img class="logo" src="images/Untitled design (40).png">
+            <ul>
+                <li><a class="link" href="index.html">Home</a></li>
+                <li><a class="link" href="movies.html">Movies</a></li>
+                <li><a class="link" href="book.html">Books</a></li>
+                <li><a class="link" href="char.html">Characters</a></li>
+                <li><a class="link" href="shop.html">Shop</a></li>
+            </ul>
+            <!-- Using an image of bar for dropdown menu-->
+            <div class="bar_btn">
+                <img class="bar" src="images/Untitled design (42).png">
+            </div>
+        </div>  
+        <!-- Creating a dropdown for smaller screens -->
+        <div class="dropdown">
+            <li><a class="link" href="index.html">Home</a></li>
+            <li><a class="link" href="movies.html">Movies</a></li>
+            <li><a class="link" href="book.html">Books</a></li>
+            <li><a class="link" href="char.html">Characters</a></li>
+            <li><a class="link" href="shop.html">Shop</a></li>          
+        </div>
+
+        <div id="audio-widget">
+            <audio id="audio-player" controls loop autoplay>
+                <source src="harry_potter_theme.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div id="audio-icon" onclick="toggleAudio()">
+                <!-- YouTube-style volume up icon -->
+                🔊
+            </div>
+        </div>
+    </header>
+
+<!-- Inserting audio player to add bg music -->
+<link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+<div id="audio-widget">
+	<!-- setting the audio to play on loop and automatically -->
+	<audio id="audio-player" controls loop autoplay> 
+		<!-- inserting harry potter theme audio -->
+		<source src="harry_potter_theme.mp3" type="audio/mp3">
+		Your browser does not support the audio element.
+	</audio>
+	<!-- Adding a button to toggle audio -->
+	<div id="audio-icon" onclick="toggleAudio()">
+		<!-- Using a volume up icon as audio widget-->
+		🔊
+	</div>
+  </div>    
+
+<!-- creating an autoplay slider -->
+<div class="main">
+    <img  class="s" src="images/pic (7).png">
+    <img class="s" src="images/pic (6).png">
+</div>
+
+<!-- Text animation for books heading-->
+<div class="wrapper text">
+    <div>
+        <h3 class="bounce">
+            <span>B</span>
+            <span>O</span>
+            <span>O</span>
+            <span>K</span>
+            <span>S</span>        
+        </h3>
+    </div>
+</div>
+
+<!-- Creating a book slider to display harry potter books -->
+<!-- Reference: CodePen -->
+<div class="mainnn">
+    <!-- Book 1 slide -->
+    <div class="container">
+        <div class="heading">Book 1</div>
+        <div class="card">
+            <div  class="cover">
+                <!-- book 1 cover image -->
+                <img class="top" src="images/SorcerersStone_2017.png"/>
+                <img class="side" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface">
+            <div class="content">
+                <div class="head">
+                    <!-- Book 1 title -->
+                <div class="title">Harry Potter and the Philosopher's stone</div>
+                </div>
+                <!-- author -->
+                <div class="author">by J.K. Rowling</div>
+                <div class="main">
+                <!-- Book 1 synopsis -->
+                <p>The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 2 slide -->
+    <div class="container-2">
+        <div class="heading2">Book 2</div>
+        <div class="card2">
+            <div  class="cover2">
+                <!-- book 2 cover image -->
+                <img class="top2" src="images/ChamberOfSecrets_2017.png"/>
+                <img class="side2" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface2">
+            <div class="content2">
+                <div class="head2">
+                <!-- Book 2 title -->
+                <div class="title2">Harry Potter and the Chamber of Secrets</div>
+                </div>
+                <!-- author -->
+                <div class="author2">by J.K. Rowling</div>
+                <div class="main2">
+                <!-- Book 2 synopsis -->
+                <p>The second novel in the Harry Potter series. The plot follows Harry's second year at Hogwarts School of Witchcraft and Wizardry, during which a series of messages on the walls of the school's corridors warn that the "Chamber of Secrets" has been opened.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 3 slide -->
+    <div class="container-3">
+        <div class="heading3">Book 3</div>
+        <div class="card3">
+            <div  class="cover3">
+                <!-- book 3 cover image -->
+                <img class="top3" src="images/PrisonerOfAzkaban_2017.png"/>
+                <img class="side3" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface3">
+            <div class="content3">
+                <div class="head3">
+                <!-- Book 3 title -->
+                <div class="title3">Harry Potter and the Prisoner of Azkaban</div>
+                </div>
+                <!-- author -->
+                <div class="author3">by J.K. Rowling</div>
+                <div class="main3">
+                <!-- Book 3 synopsis -->
+                <p>The third novel in the Harry Potter series. The book follows Harry Potter, in his third year at Hogwarts School of Witchcraft and Wizardry. Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 4 slide -->
+    <div class="container-4">
+        <div class="heading4">Book 4</div>
+        <div class="card4">
+            <div  class="cover4">
+                <!-- book 4 cover image -->
+                <img class="top4" src="images/GobletOfFire_2017.png"/>
+                <img class="side4" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface4">
+            <div class="content4">
+                <div class="head4">
+                <!-- Book 4 title -->
+                <div class="title4">Harry Potter and the Goblet of Fire</div>
+                </div>
+                <!-- author -->
+                <div class="author4">by J.K. Rowling</div>
+                <div class="main4">
+                <!-- Book 4 synopsis -->
+                <p>The fourth novel in the Harry Potter series. It follows Harry Potter, a wizard in his fourth year at Hogwarts School of Witchcraft and Wizardry, and the mystery surrounding the entry of Harry's name into the Triwizard Tournament, in which he is forced to compete.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 5 slide -->
+    <div class="container-5">
+        <div class="heading5">Book 5</div>
+        <div class="card5">
+            <div  class="cover5">
+                <!-- book 5 cover image -->
+                <img class="top5" src="images/OrderOfThePhoenix_2017.png"/>
+                <img class="side5" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface5">
+            <div class="content5">
+                <div class="head5">
+                <!-- Book 5 title -->
+                <div class="title5">Harry Potter and the Order of the Phoenix</div>
+                </div>
+                <!-- author -->
+                <div class="author5">by J.K. Rowling</div>
+                <div class="main5">
+                <!-- Book 5 synopsis -->
+                <p>The fifth novel in the Harry Potter series. It follows Harry Potter's struggles through his fifth year at Hogwarts School of Witchcraft and Wizardry, including the surreptitious return of Lord Voldemort, O.W.L. exams, and an obstructive Ministry of Magic.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 6 slide -->
+    <div class="container-6">
+        <div class="heading6">Book 6</div>
+        <div class="card6">
+            <div  class="cover6">
+                <!-- book 6 cover image -->
+                <img class="top6" src="images/HalfBloodPrince_2017.png"/>
+                <img class="side6" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface6">
+            <div class="content6">
+                <div class="head6">
+                <!-- Book 6 title -->
+                <div class="title6">Harry Potter and the Half-Blood Prince</div>
+                </div>
+                <!-- author -->
+                <div class="author6">by J.K. Rowling</div>
+                <div class="main6">
+                <!-- Book 6 synopsis -->
+                <p>The sixth and penultimate novel in the Harry Potter series. Set during Harry Potter's sixth year at Hogwarts, the novel explores the past of Lord Voldemort, and Harry's preparations for the final battle against Voldemort alongside Albus Dumbledore.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 7 slide -->
+    <div class="container-7">
+        <div class="heading7">Book 7</div>
+        <div class="card7">
+            <div  class="cover7">
+                <!-- book 7 cover image -->
+                <img class="top7" src="images/DeathlyHallows_2017.png"/>
+                <img class="side7" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface7">
+            <div class="content7">
+                <div class="head7">
+                <!-- Book 7 title -->
+                <div class="title7">Harry Potter and the Deathly Hallows</div>
+                </div>
+                <!-- author -->
+                <div class="author7">by J.K. Rowling</div>
+                <div class="main7">
+                    <!-- Book 7 synopsis -->
+                    <p>The seventh and final novel in the Harry Potter series. The novel chronicles the events directly following Harry Potter and the Half-Blood Prince (2005) and the final confrontation between the wizards Harry Potter and Lord Voldemort.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- Book 8 slide -->
+    <div class="container-8">
+        <div class="heading8">Book 8</div>
+        <div class="card8">
+            <div  class="cover8">
+                <!-- book 8 cover image -->
+                <img class="top8" src="images/QuidditchTTA.png"/>
+                <img class="side8" src="images/Untitled design (46).png" />
+            </div>
+            <div class="preface8">
+            <div class="content8">
+                <div class="head8">
+                <!-- Book 8 title -->
+                <div class="title8">Quidditch Through the Ages</div>
+                </div>
+                <!-- author -->
+                <div class="author8">by J.K. Rowling</div>
+                <div class="main8">
+                    <!-- Book 8 synopsis -->
+                    <p>One of the most popular books in the Hogwarts School library, Quidditch Through the Ages contains all you will ever need to know about the history, the rules – and the breaking of the rules – of the noble sport of Quidditch.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+</div>
+    
+    <!-- Creating a footer with links to other websites annd social media icons-->
+    <footer class="footer">
+        <div class="d1">
+          <a class="home" href="index.html">Home</a><br>
+          <a class="about" href="movies.html">Movies</a><br>
+          <a class="menu" href="book.html">Books</a><br>
+          <a class="gallery" href="char.html">Characters</a><br>
+          <a class="reviews" href="shop.html">Shop</a><br>
+        </div>
+        <div class="d2">
+            <h4>About Us</h4><br>
+            <h4>Press</h4><br>
+            <h4>FAQs</h4>
+        </div>
+        <!-- Using svg icons for social media links -->
+        <h4 class="follow">Find Us On</h4>
+        <div class="social-icons">
+            <a href="#"  title="facebook"> 
+              <i class="fab fa-facebook-square" aria-hidden="true"></i>
+            </a>
+            <a href="#" title="twitter"> 
+              <i class="fab fa-twitter-square" aria-hidden="true"></i>
+            </a>
+            <a href="#" title="instagram">  
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" title="youtube">
+              <i class="fab fa-youtube-square" aria-hidden="true"></i>
+            </a>
+            <a href="#" title="linkedin">
+              <i class="fab fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+          </div>
+    </footer>
+
+<!-- Js script for dropdown menu -->
+<script>
+    // using dom to select elements
+    const bar_btn= document.querySelector('.bar_btn');
+    const bar_btnIcon= document.querySelector('.bar_btn i');
+    const dropdown= document.querySelector('.dropdown');
+    // Creating event handler for dropdown button click
+    bar_btn.onclick= function(){
+        // Toggling the 'open' class on the dropdown, which controls its visibility
+        dropdown.classList.toggle('open');
+        // Checking if the dropdown is currently open or closed
+        const isOpen= dropdown.classList.contains('open')
+
+    };
+    
+    // Js script for slider
+    const slides = document.querySelectorAll('.main img');
+    // Initializing current slide index
+    let currentSlideIndex = 0;
+    // Creating function to show the next slide
+    function showNextSlide() {
+        // Hiding current slide
+        slides[currentSlideIndex].style.display = 'none';
+        // updating current slide index for next slide
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        // Displaying next slide
+        slides[currentSlideIndex].style.display = 'block';
+    }
+    // Setting up an interval to automatically transition to the next slide every 5 seconds (adjust as needed)
+    setInterval(showNextSlide, 3500);
+
+</script>
+   
+<!-- Background music Js -->
+<script>
+	//  creating a function to toggle play/pause and update the volume icon
+	function toggleAudio() {
+		// Getting the audio player and audio icon elements
+		var audioPlayer = document.getElementById('audio-player');
+		var audioIcon = document.getElementById('audio-icon');
+  
+		// Checking if audio player is paused
+		if (audioPlayer.paused) {
+			// If paused,  then play the audio
+			audioPlayer.play();
+			// Changing the icon to volume up when playing
+			audioIcon.textContent = '🔊';    // Volume up icon
+		} else {
+			// If playing, pause the audio
+			audioPlayer.pause();
+			// Change the icon to mute when paused
+			audioIcon.textContent = '🔇';    // Volume off icon
+		}
+	}
+  </script>
+
+</body>
+</html>
