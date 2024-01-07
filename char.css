@@ -267,6 +267,9 @@ h1 {
 #slide5{
   --index: 5;
 }
+#slide5{
+  --index: 6;
+}
 /* setting bg color to each card */
 #slide1 .content {
 	background: linear-gradient(#890202, #ED6262);
@@ -282,6 +285,9 @@ h1 {
 }
 #slide5 .content {
 	background: linear-gradient(#3b8144,#37a744)
+}
+#slide6 .content {
+	background: linear-gradient(#6f2ca2,#903ccf)
 }
 /* setting sticky position on cards */
 .scroll{
