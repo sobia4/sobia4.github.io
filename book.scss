@@ -1,0 +1,1194 @@
+// Importing cdn and google fonts
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Zeyada&display=swap');
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+// Resetting css
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+    // Creating root variables for comman values
+    :root{
+    --mobile-height: 600px;
+    --mobile-width: 325px;
+    --mobile-radius: 25px;
+    --seperator-height: 490px;
+    --bg: "images/Untitled design (44).png";
+    --intro-bg: #eed7d1;
+    --font-color: black;
+    --mobile-bg: #fdeae6;
+    --transition: transform 0.7s ease-in-out;
+    }
+    // styling the main book container
+    .mainnn {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      top: -8%;
+    }
+    // styling the first container
+    .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+    }
+    //styling the heading in book card
+    .heading{
+    font-size: 30px;
+    margin-top: 100px;
+    color: white;
+    }
+    // styling the top card
+    .card{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #753e95;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+    }
+    // styling the card that appears upon hovering
+    .cover{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#743E94,#E788FF);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);    // adding transition effect
+    }
+    // styling the top image
+    .top{
+    position: absolute;
+    transform: translateZ(28.5px);   // adding transformation effect
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+    }
+    // styling the side image
+    .side{
+    position: absolute;
+    width: 380px;
+    left: 165px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);     // adding transformation effect
+    }
+    // adding hover effect
+    .cover:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+    }
+    .cover:hover + .preface{
+    transform: translateY(-302px);
+    }
+    // styling book details that appear after hovering
+    .preface{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+    .head{
+    display: flex;
+    align-items: center;
+    }
+    // heading  
+    .title{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;   
+    }
+    // author
+    .author{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main p:first-child{
+    margin-bottom: 15px;
+    }
+    }
+   
+   
+   // styling the second container
+   .container-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+   }
+   //styling the heading in book card
+   .heading2{
+    font-size: 30px;
+    margin-top: 100px;
+    color: white;
+   }
+   // styling the top card
+   .card2{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #895628;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover2{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#895628,#FFD583);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top2{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side2{
+    position: absolute;
+    width: 370px;
+    left: 170px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover2:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover2:hover + .preface2{
+    transform: translateY(-302px);  
+   }
+   // styling book details that appear after hovering
+   .preface2{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head2{
+    display: flex;
+    align-items: center;
+    }
+    // heading
+    .title2{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    // author
+    .author2{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main2{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main2 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+   
+   
+   // styling the third container
+   .container-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+  
+   }
+   //styling the heading in book card
+   .heading3{
+    font-size: 30px;
+    margin-top: 100px;
+    color: white;
+   }
+   // styling the top card
+   .card3{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #dd8d3c;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover3{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#f6a049, #BF5239);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top3{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side3{
+    position: absolute;
+    width: 375px;
+    left: 166px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover3:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover3:hover + .preface3{
+    transform: translateY(-302px); 
+   }
+   // styling book details that appear after hovering
+   .preface3{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head3{
+    display: flex;
+    align-items: center;
+    }
+    // heading
+    .title3{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    // author
+    .author3{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main3{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main3 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+   p{
+    font-size: 17px;
+   }
+   
+   // styling the fourth container
+   .container-4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    margin: 30px;
+   }
+   //styling the heading in book card
+   .heading4{
+    font-size: 30px;
+    margin-top: 100px; 
+    color: white;
+   }
+   // styling the top card
+   .card4{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #67c07f;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover4{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#72D88E, #035D55);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top4{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side4{
+    position: absolute;
+    width: 375px;
+    left: 166px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover4:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover4:hover + .preface4{
+    transform: translateY(-302px);  
+   }
+   // styling book details that appear after hovering
+   .preface4{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head4{
+    display: flex;
+    align-items: center;
+    }
+    // heading
+    .title4{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    //author
+    .author4{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main4{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main4 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+   
+   
+   // styling the fifth container
+   .container-5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+   }
+   //styling the heading in book card
+   .heading5{
+    font-size: 30px;
+    margin-top: 100px;
+    
+    color: white;
+   }
+   // styling the top card
+   .card5{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #3f5b8e;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover5{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#9EDFFF, #4969A4);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top5{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side5{
+    position: absolute;
+    width: 375px;
+    left: 166px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover5:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover5:hover + .preface5{
+    transform: translateY(-302px);  
+   }
+   // styling book details that appear after hovering
+   .preface5{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head5{
+    display: flex;
+    align-items: center;
+    }
+    // heading
+    .title5{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    // author
+    .author5{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main5{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main5 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+   
+   // styling the sixth container
+   .container-6{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+   }
+   //styling the heading in book card
+   .heading6{
+    font-size: 30px;
+    margin-top: 100px; 
+    color: white;
+   }
+   // styling the top card
+   .card6{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #21a67c;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover6{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#B4CFB0, #07694A);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top6{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side6{
+    position: absolute;
+    width: 375px;
+    left: 166px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover6:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover6:hover + .preface6{
+    transform: translateY(-302px);  
+   }
+   // styling book details that appear after hovering
+   .preface6{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head6{
+    display: flex;
+    align-items: center;
+    }
+    // heading
+    .title6{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    // author
+    .author6{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main6{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main6 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+   
+   // styling the seventh container
+   .container-7{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+   }
+   //styling the heading in book card
+   .heading7{
+    font-size: 30px;
+    margin-top: 100px; 
+    color: white;
+   }
+   // styling the top card
+   .card7{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #b53e3e;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover7{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#D84E4E, #FFF681);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top7{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side7{
+    position: absolute;
+    width: 370px;
+    left: 170px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover7:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover7:hover + .preface7{
+    transform: translateY(-302px);  
+   }
+   // styling book details that appear after hovering
+   .preface7{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head7{
+    display: flex;
+    align-items: center;
+    }
+    // heading
+    .title7{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    // author
+    .author7{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main7{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main7 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+   
+   
+   // styling the eighth container
+   .container-8{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    height: 800px;
+    margin: 30px;
+   }
+   //styling the heading in book card
+   .heading8{
+    font-size: 30px;
+    margin-top: 100px; 
+    color: white;
+   }
+   // styling the top card
+   .card8{
+    height: var(--mobile-height);
+    width: var(--mobile-width);
+    border-radius: var(--mobile-radius);
+    margin: 30px 0;
+    overflow: hidden;
+    perspective: 500px;
+    background-color: #828080;
+    color: var(--font-color);
+    box-shadow: 36px 36px 50px 15px #00101F;
+   }
+   // styling the card that appears upon hovering
+   .cover8{
+    height: var(--seperator-height);
+    width: calc(var(--mobile-width)*2);
+    position: relative;
+    left: -52.5%;
+    border-top-right-radius: var(--mobile-radius);
+    border-bottom-left-radius: var(--mobile-radius);
+    background: linear-gradient(#929090, #F1EDED);
+    transform-origin: 50% 40%;
+    transform-style: preserve-3d;
+    z-index: 4;
+    transition: var(--transition);
+   }
+   // styling the top image
+   .top8{
+    position: absolute;
+    transform: translateZ(28.5px);
+    top: 110px;
+    left: 225px;
+    z-index: 5;
+    width: 245px;
+    height: 300px;
+   }
+    // styling the side image
+   .side8{
+    position: absolute;
+    width: 375px;
+    left: 166px;
+    top: 430px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+   }
+   // adding hover effect
+   .cover8:hover{
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+   }
+   .cover8:hover + .preface8{
+    transform: translateY(-302px);  
+   }
+   // styling book details that appear after hovering
+   .preface8{
+    padding: 50px;
+    height: var(--seperator-height);
+    background: white;
+    transition: var(--transition);
+   
+    .head8{
+    display: flex;
+    align-items: center;
+    }
+    .title8{
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    }
+    .author8{
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif ;
+    font-style: italic;
+    }
+    // setting font family to synopsis
+    .main8{
+    font-family: 'Quicksand', sans-serif;
+    }
+    .main8 p:first-child{
+    margin-bottom: 15px;
+    }
+   }
+     
+     
+     /* Navbar */
+     /* setting the size and position of dropdown menu bar */
+      .bar{
+      width: 45px;
+      height: 35px;
+      margin-right: 50px;
+      }
+      img{
+        width: 175px;
+        height: 130px; 
+        }
+      /* setting the size and position of logo */
+      .logo {
+        width: 175px;
+        height: 130px;
+      }
+      /* setting the html and body height to 100% */
+      html, body{
+      height: 100%;
+      
+      }
+      /* styling the navbar list */
+      li{
+      list-style: none;
+      font-size: 25px;
+      }
+      /* setting a color for nav links */
+      .link{
+        text-decoration: none;  
+        color: rgb(229, 175, 40);
+    }
+    /* setting a color for nav links  when hovered */
+    .link:hover{
+        color: white;  
+    }
+    /* positioning the header and givivng it full width */
+      header{
+      position: relative;
+      width: 100%;
+      
+      }
+      /* styling the navbar */
+      .navbar{
+      width: 100%;
+      height: 90px; 
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between ;        /* adding space between the links*/
+      }
+      /* giving gap between links and displaying them on right side */
+      .navbar ul{
+      display: flex; 
+      gap: 130px;
+      margin-right: 100px;
+      color: rgb(229, 175, 40);
+      }
+      /* setting a pointer cursor on dropdown bar */
+      .bar_btn{
+      cursor: pointer;
+      display: none;   
+      }
+      /* Adding background image to the whole body */
+      body{
+      background-image: url("images/bg.png");
+      background-size: cover;
+      background-position: center;
+      }
+    
+     
+      /* Dropdown menu */
+      .dropdown{
+        display: none;
+        position: absolute;
+        right: 40px;
+        top: 60px;
+        width: 300px;
+        background: rgba(235, 235, 235, 0.1);        /* adding bg color to dropdown menu */
+        -webkit-backdrop-filter: 10px;
+                backdrop-filter: 10px;
+        overflow: hidden;
+        height: 0px;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      color: rgb(229, 175, 40);
+      }
+      /* setting a higher z-index value to the dropdown when it opens so it appears on top of everything */
+      .dropdown.open{
+      height: 255px;
+      }
+      /* styling the dropdown links */
+      .dropdown li{
+      padding: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+      
+      
+     /* Responsivness of navbar for larger screens */
+     @media(max-width: 992px){
+      .navbar ul{
+      display: none;
+      }
+      .bar_btn{
+      display: block;
+      }
+      .dropdown{
+      display: block;
+      }
+     }
+     
+     @media(max-width: 992px){
+      .dropdown{
+      left: 2rem;
+      width: unset;
+      }
+     } 
+    
+
+    /* Slider */
+    .main{
+      margin-top: 10px;
+      max-width: 100%;
+    }
+    /* Hide all images initially */
+    .main .s {
+      display: none;
+      width: 100%;
+      height: 700px;
+      background-size: cover;
+    
+    }
+    /* Display the first image */
+    .main .s:first-child {
+      display: block;
+    }
+    .s {
+      width: 100%;
+      height: 50vw;
+    }
+    // responsivness for smaller screens
+    @media (max-width: 600px) {
+      .main .s {
+          height: auto; 
+      }
+    }
+    @media screen and (max-width:480px) {
+      .main .s {
+        height: 580px;
+      }
+    }
+
+
+/* Styling the bounce animation  */
+.bounce {
+  font-size: 55px;
+  width: 100%;
+  margin-top: 6%;
+  display: inline-flex;
+  justify-content: center;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, #211e1e2e);
+}
+/* styling each individual letters */
+.bounce span {
+  display: inline-flex;
+  color: #c7f4ff;
+  font-family: 'Harry Potter', sans-serif;
+  animation: bounce 1s infinite;
+}
+/* Keyframes for bounce animation */
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+      transform: translateY(0);
+  }
+  25% {
+      transform: translateY(-20px);
+  }
+}
+/* Adding animation delay for each six letters */
+.text span:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.text span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.text span:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.text span:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+.text span:nth-of-type(5) {
+  animation-delay: 0.5s;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+/* Adding a bg image to footer */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/landscape-mountains-silhouette-8k.jpg') center/cover;
+  filter: blur(8px);           /* bluring the footer */
+  z-index: -1;            /* setting the z-index value so that text appears on top as footer image is blurred */
+}
+/* first column of all webpages in footer */
+.d1 {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 17%;
+  font-size: 20px;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* links to other webpages in footer */
+.d1 a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+ /* second column in footer */
+.d2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 45%;
+  font-size: 20px;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  position: relative;
+  bottom: 320px;
+}
+/* social media corner */
+.follow{
+  font-size: 20px;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  position: relative;
+  bottom: 430px;
+  margin-left: 72.6%;
+}
+/* styling the social media icons */
+.social-icons{
+  position: relative;
+  bottom: 410px;
+  right: -72%;
+  text-align: center;
+  width: 200px;
+}
+.social-icons a{
+  color:#fff;
+  line-height:30px;
+  font-size:30px;
+  margin: 0 5px;
+  text-decoration:none;
+}
+/* adding animation to svg icons */
+.social-icons a i{
+  line-height:30px;
+  font-size:30px;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1); 
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1); 
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+}
+/* adding animation to svg icons when hovered */
+.social-icons a:hover i{
+  box-shadow: 0px 0px 10px #000000;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);   
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1.5);
+}
+
+ /* Responsivness for iPhone4 */
+@media only screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) {
+  .d2{
+    bottom: 290px;
+  }
+  .follow{
+    bottom: 410px;
+  }
+  .social-icons{
+    bottom: 390px;
+  }
+}
+
+/* Responsivness for iPhoneX */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .d2{
+    bottom: 290px;
+  }
+  .follow{
+    bottom: 410px;
+  }
+  .social-icons{
+    bottom: 390px;
+  }
+}
+
+/* Responsiveness for iPad*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .d2{
+    bottom: 290px;
+  }
+  .follow{
+    bottom: 410px;
+  }
+  .social-icons{
+    bottom: 390px;
+  }
+}
+
+/* Responsiveness for Google pixel */
+@media only screen and (device-width: 411px) and (device-height: 731px) {
+  .d2{
+    bottom: 290px;
+  }
+  .follow{
+    bottom: 410px;
+  }
+  .social-icons{
+    bottom: 390px;
+  }
+}
+
+
+/* styling audio widget container */
+#audio-widget {
+  position: relative;
+  z-index: 1000;
+}
+/* Hiding the audio element */
+#audio-player {
+  display: none; 
+}
+/* styling audio icon button */
+#audio-icon {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 30px; 
+}
