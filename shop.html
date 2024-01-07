@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title for the webpage -->
+    <title>Harry Potter</title>
+    <!-- External Css link -->
+    <link rel="stylesheet" href="shop.css">
+    <!-- Fontawesome library for social media icons -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Creating a header section for navbar and dropdown menu -->
+  <header>
+    <div class="navbar">
+        <!-- Logo image -->
+        <img class="logo" src="images/Untitled design (40).png">
+        <ul>
+            <li><a class="link" href="index.html">Home</a></li>
+			      <li><a class="link" href="movies.html">Movies</a></li>
+            <li><a class="link" href="book.html">Books</a></li>
+            <li><a class="link" href="char.html">Characters</a></li>
+            <li><a class="link" href="shop.html">Shop</a></li>
+        </ul>
+        <!-- Using an image of bar for dropdown menu-->
+        <div class="bar_btn">
+            <img class="bar" src="images/Untitled design (42).png">
+        </div>
+    </div>  
+    <!-- Creating a dropdown for smaller screens -->
+    <div class="dropdown">
+		<li><a class="link" href="index.html">Home</a></li>
+		<li><a class="link" href="movies.html">Movies</a></li>
+		<li><a class="link" href="book.html">Books</a></li>
+		<li><a class="link" href="char.html">Characters</a></li>
+		<li><a class="link" href="shop.html">Shop</a></li>          
+    </div>
+</header>
+
+<!-- Inserting audio player to add bg music -->
+<link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+<div id="audio-widget">
+	<!-- setting the audio to play on loop and automatically -->
+	<audio id="audio-player" controls loop autoplay> 
+		<!-- inserting harry potter theme audio -->
+		<source src="harry_potter_theme.mp3" type="audio/mp3">
+		Your browser does not support the audio element.
+	</audio>
+	<!-- Adding a button to toggle audio -->
+	<div id="audio-icon" onclick="toggleAudio()">
+		<!-- Using a volume up icon as audio widget-->
+		🔊
+	</div>
+  </div>
+
+<!-- creating an autoplay slider -->
+<div class="main">
+  <img  class="s" src="images/harrypotter_bday.webp">
+  <img  class="s" src="images/EVERAU_harry-potter-shoes.jpg">
+  <img class="s" src="images/robe.jpeg">
+</div>
+   
+  <!-- heading -->
+  <h1 class="shop">The Harry Potter Shop</h1>
+
+  <!-- main container for the cards -->
+  <div class="box">     
+      <!-- Individual card container -->
+      <div class="cont__card">
+      <!-- Card 1 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/Hagrid_Plush_large.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">130 AED</span>
+              <!-- product name -->
+              <h2 class="cont__title">Rubeus Hagrid Plush</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="cont__article">
+         <!-- product image -->
+          <img class="cont__img" src="images/ironbelly_plush_large.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">90 AED</span>
+              <h2 class="cont__title">Ironbelly Dragon Plush</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/beans.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">40 AED</span>
+              <h2 class="cont__title">Bertie Bott's Beans</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 4 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/choco.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">40 AED</span>
+              <h2 class="cont__title">Chocolate Frog</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 5 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/BabyNiffler-ginger_large.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">60 AED</span>
+              <h2 class="cont__title">Baby Niffler Plush</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 6 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/Untitled design (39).png">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">80 AED</span>
+              <h2 class="cont__title">Hogwarts Snowglobe</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 7 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/raven.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">200 AED</span>
+              <h2 class="cont__title">Ravenclaw Robe</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 8 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/sltr.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">200 AED</span>
+              <h2 class="cont__title">Slytherin Robe</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 9 -->
+      <article class="cont__article">
+          <!-- product image -->
+          <img class="cont__img" src="images/gryf robe.webp">
+          <div class="cont__content">
+              <!-- product price -->
+              <span class="cont__description">200 AED</span>
+              <h2 class="cont__title">Gryffindor Robe</h2>
+              <!-- buy now button -->
+              <a href="#" class="cont__button">Buy Now</a> 
+          </div>
+      </article>
+      <!-- Card 10 -->
+      <article class="cont__article">
+        <!-- product image -->
+        <img class="cont__img" src="images/hedwig.webp">
+        <div class="cont__content">
+            <!-- product price -->
+            <span class="cont__description">70 AED</span>
+            <h2 class="cont__title">Hedwig Soft Toy</h2>
+            <!-- buy now button -->
+            <a href="#" class="cont__button">Buy Now</a> 
+        </div>
+    </article>
+    <!-- Card 11 -->
+    <article class="cont__article">
+      <!-- product image -->
+      <img class="cont__img" src="images/ravplush_550x825.webp">
+      <div class="cont__content">
+          <!-- product price -->
+          <span class="cont__description">90 AED</span>
+          <h2 class="cont__title">Slytherin Mascot Snake Soft Toy</h2>
+          <!-- buy now button -->
+          <a href="#" class="cont__button">Buy Now</a> 
+      </div>
+    </article>
+      <!-- Card 12 -->
+      <article class="cont__article">
+        <!-- product image -->
+        <img class="cont__img" src="images/slythplush_550x825.webp">
+        <div class="cont__content">
+            <!-- product price -->
+            <span class="cont__description">90 AED</span>
+            <h2 class="cont__title">Ravenclaw Mascot Raven Soft Toy</h2>
+            <!-- buy now button -->
+            <a href="#" class="cont__button">Buy Now</a> 
+        </div>
+  </article>
+  </div>
+</div>
+
+<!-- Inserting an image  -->
+<img class="person" src="images/Start.png"> 
+
+ <!-- Creating a footer with links to other websites annd social media icons-->
+ <footer class="footer">
+	<div class="d1">
+	  <a class="home" href="index.html">Home</a><br>
+	  <a class="about" href="movies.html">Movies</a><br>
+	  <a class="menu" href="book.html">Books</a><br>
+	  <a class="gallery" href="char.html">Characters</a><br>
+	  <a class="reviews" href="shop.html">Shop</a><br>
+	</div>
+	<div class="d2">
+		<h4>About Us</h4><br>
+		<h4>Press</h4><br>
+		<h4>FAQs</h4>
+    </div>
+    <!-- Using svg icons for social media links -->
+    <h4 class="follow">Find Us On</h4>
+	<div class="social-icons">
+		<a href="#"  title="facebook"> 
+		  <i class="fab fa-facebook-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="twitter"> 
+		  <i class="fab fa-twitter-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="instagram">  
+		  <i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="youtube">
+		  <i class="fab fa-youtube-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="linkedin">
+		  <i class="fab fa-linkedin-square" aria-hidden="true"></i>
+		</a>
+	  </div>
+</footer>
+
+
+
+<!-- Js script for dropdown menu -->
+<script>
+  // using dom to select elements
+  const bar_btn= document.querySelector('.bar_btn');
+  const bar_btnIcon= document.querySelector('.bar_btn i');
+  const dropdown= document.querySelector('.dropdown');
+  // Creating event handler for dropdown button click
+  bar_btn.onclick= function(){
+      // Toggling the 'open' class on the dropdown, which controls its visibility
+      dropdown.classList.toggle('open');
+      // Checking if the dropdown is currently open or closed
+      const isOpen= dropdown.classList.contains('open')
+            // Add or remove the "move-down" class based on the dropdown state
+            document.body.classList.toggle('move-down', isOpen);
+            document.querySelector('header').classList.toggle('move-down', isOpen);
+  };
+</script>
+
+<!-- Background music Js -->
+<script>
+	//  creating a function to toggle play/pause and update the volume icon
+	function toggleAudio() {
+		// Getting the audio player and audio icon elements
+		var audioPlayer = document.getElementById('audio-player');
+		var audioIcon = document.getElementById('audio-icon');
+  
+		// Checking if audio player is paused
+		if (audioPlayer.paused) {
+			// If paused,  then play the audio
+			audioPlayer.play();
+			// Changing the icon to volume up when playing
+			audioIcon.textContent = '🔊';    // Volume up icon
+		} else {
+			// If playing, pause the audio
+			audioPlayer.pause();
+			// Change the icon to mute when paused
+			audioIcon.textContent = '🔇';    // Volume off icon
+		}
+	}
+</script>
+
+
+<script>
+// Js script for slider
+const slides = document.querySelectorAll('.main img');
+// Initializing current slide index
+let currentSlideIndex = 0;
+// Creating function to show the next slide
+function showNextSlide() {
+    // Hiding current slide
+    slides[currentSlideIndex].style.display = 'none';
+    // updating current slide index for next slide
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    // Displaying next slide
+    slides[currentSlideIndex].style.display = 'block';
+}
+// Setting up an interval to automatically transition to the next slide every 5 seconds (adjust as needed)
+setInterval(showNextSlide, 3500);
+</script>
+
+</body>
+</html>
