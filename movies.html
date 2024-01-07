@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title for the webpage -->
+  <title>Harry Potter</title>
+  <!--  Font Awesome library -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- External Css link -->
+	<link rel="stylesheet" href="movies.css">
+</head>
+
+<body >
+<!-- Creating a header section for navbar and dropdown menu -->
+<header>
+    <!-- Navbar with logo and links to other pages -->
+    <div class="navbar">
+        <!-- Logo image -->
+        <img class="logo" src="images/Untitled design (40).png">
+        <ul>
+            <li><a class="link" href="home.html">Home</a></li>
+			<li><a class="link" href="movies.html">Movies</a></li>
+            <li><a class="link" href="book.html">Books</a></li>
+            <li><a class="link" href="char.html">Characters</a></li>
+            <li><a class="link" href="shop.html">Shop</a></li>
+        </ul>
+        <!-- Using an image of bar for dropdown menu-->
+        <div class="bar_btn">
+            <img class="bar" src="images/Untitled design (42).png">
+        </div>
+    </div>  
+    <!-- Creating a dropdown for smaller screens -->
+    <div class="dropdown">
+		<li><a class="link" href="home.html">Home</a></li>
+		<li><a class="link" href="movies.html">Movies</a></li>
+		<li><a class="link" href="book.html">Books</a></li>
+		<li><a class="link" href="char.html">Characters</a></li>
+		<li><a class="link" href="shop.html">Shop</a></li>          
+    </div>
+</header>
+
+<!-- Inserting audio player to add bg music -->
+<link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+<div id="audio-widget">
+  <!-- setting the audio to play on loop and automatically -->
+  <audio id="audio-player" controls loop autoplay> 
+      <!-- inserting harry potter theme audio -->
+      <source src="harry_potter_theme.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+  </audio>
+  <!-- Adding a button to toggle audio -->
+  <div id="audio-icon" onclick="toggleAudio()">
+      <!-- Using a volume up icon as audio widget-->
+      🔊
+  </div>
+</div>
+
+<!-- Creating a on scroll animation effect to display info and creators of harry potter story movies -->
+<!-- Reference: CodePen -->
+<div class="movie">
+    <!-- Inserting a background image -->
+    <div class="bg"><img src="images/scroll.jpeg"></div>
+    <div class="story">
+      <div class="story-content">
+        <!-- Movie title -->
+        <h2 class="name">Harry Potter</h2>
+        <!-- General info about the harry potter movies -->
+        <h4 class="intro">Harry Potter is a film series based on the eponymous novels by British author J. K. Rowling. The series is produced and distributed by Warner Bros. Pictures and consists of eight fantasy films, beginning with Harry Potter and the Philosopher's Stone (2001) and culminating with Harry Potter and the Deathly Hallows – Part 2 (2011).</h4>
+      </div>
+    </div>
+    <!-- A section of creators, actors and writers -->
+    <div class="actor">
+      <ul>
+        <li>
+          <h2 class="role">Directors</h2>
+          <h4 class="people">	
+            Chris Columbus (1–2)<br>
+            Alfonso Cuarón (3)<br>
+            Mike Newell (4)<br>
+            David Yates (5–8)</h4>
+        </li>
+        <li>
+          <h2 class="role">Writers</h2>
+          <h4 class="people">J. K. Rowling</h4>
+        </li>
+        <li>
+          <h2 class="role">Stars</h2>
+          <h4 class="people">	
+            Daniel Radcliffe<br>
+            Rupert Grint<br>
+            Emma Watson<br></h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Scroll Animation -->
+  <ul class="scroll-wrap">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+<!-- Creating a heading for movies using bounce animation -->
+<div class="wrapper text">
+    <div>
+        <h3 class="bounce">
+            <span>M</span>
+            <span>0</span>
+            <span>V</span>
+            <span>I</span>
+            <span>E</span>
+            <span>S</span>     
+        </h3>
+    </div>
+</div>
+
+<!-- Tagline for movies -->
+<h1 class="movies">Discover The Magic Beyond Pages</h1>
+
+<!-- Creating cards with hover effects to display movies -->
+<div class="wrap-card">
+  <!-- First movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m1.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Philosopher's Stone</h1>
+            <p>An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Second movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m2.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Chamber of Secrets</h1>
+            <p>An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Third movie card with movie poster and review button-->
+    <div class="card">
+        <img class="Img" src="images/m3.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Prisoner of Azkaban</h1>
+            <p>Harry, Ron and Hermione return to Hogwarts for third year, where they delve into the mystery surrounding an escaped prisoner who poses a dangerous threat to the young wizard.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Fourth movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m4.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Goblet of Fire</h1>
+            <p>Harry Potter finds himself competing in a hazardous tournament between rival schools of magic, but he is distracted by recurring nightmares.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Fifth movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m5.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Order of the Phoenix</h1>
+            <p>Harry and Dumbledore are targeted by the Wizard authorities as an authoritarian bureaucrat slowly seizes power at Hogwarts.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Sixth movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m6.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Half-Blood Prince</h1>
+            <p>Harry Potter discovers an old book marked as "the property of the Half-Blood Prince" and begins to learn more about Lord Voldemort's dark past.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Seventh movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m7 p1.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Deathly Hallows: Part 1</h1>
+            <p>Harry, Ron and Hermione uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+    <!-- Eighth movie card with movie poster and review button -->
+    <div class="card">
+        <img class="Img" src="images/m7 p2.jpeg">
+        <div class="synop">
+            <h1>Harry Potter and the Deathly Hallows: Part 2</h1>
+            <p>Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the him as the final battle rages on.</p>
+            <a href="#" class="button">Reviews</a>
+        </div>
+    </div>
+</div>
+
+ <!-- Creating a footer with links to other websites annd social media icons-->
+<footer class="footer">
+	<div class="d1">
+	  <a class="home" href="home.html">Home</a><br>
+	  <a class="about" href="movies.html">Movies</a><br>
+	  <a class="menu" href="book.html">Books</a><br>
+	  <a class="gallery" href="char.html">Characters</a><br>
+	  <a class="reviews" href="shop.html">Shop</a><br>
+	</div>
+	<div class="d2">
+		<h4 class="press">About Us</h4><br>
+		<h4 class="press">Press</h4><br>
+		<h4 class="press">FAQs</h4>
+    </div>
+
+  <!-- Using svg icons for social media links -->
+  <h4 class="follow">Find Us On</h4>
+	<div class="social-icons">
+		<a href="#"  title="facebook"> 
+		  <i class="fab fa-facebook-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="twitter"> 
+		  <i class="fab fa-twitter-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="instagram">  
+		  <i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="youtube">
+		  <i class="fab fa-youtube-square" aria-hidden="true"></i>
+		</a>
+		<a href="#" title="linkedin">
+		  <i class="fab fa-linkedin-square" aria-hidden="true"></i>
+		</a>
+	  </div>
+</footer>
+
+<!-- Js script for dropdown menu -->
+<script>
+    // using dom to select elements
+    const bar_btn= document.querySelector('.bar_btn');
+    const bar_btnIcon= document.querySelector('.bar_btn i');
+    const dropdown= document.querySelector('.dropdown');
+    // Creating event handler for dropdown button click
+    bar_btn.onclick= function(){
+      // Toggling the 'open' class on the dropdown, which controls its visibility
+      dropdown.classList.toggle('open');
+      // Checking if the dropdown is currently open or closed
+      const isOpen= dropdown.classList.contains('open')
+    };
+  </script>
+
+  <!-- Reference: CodePen -->
+  <!-- Jquery library -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+      lasScrTop = 0;   //  Setting last scroll top position to 0
+  opa = 1;          // Setting opacity to 1
+  sca = 5;      // Setting scale to 5
+  // Creating event listner for window's scroll event
+  $(window).scroll(function () {
+    // creating a variable to store current scroll position
+    winTop = $(this).scrollTop();
+    // calculating midpoint and bottom of visible window
+    winMid = $(window).height() / 2 + winTop;
+    winBot = $(window).height() + winTop;   
+    // Iterating over each list item within the '.scroll-wrap' element
+    $(".scroll-wrap li").each(function () {
+      // Getting height, offset, top, and bottom position of current list item
+      liHei = $(this).height();
+      liOff = $(this).offset();
+      liTop = liOff.top;
+      liBot = liTop + liHei;
+
+      //Checking if the list item is in middle or outside the visible window
+      if (liBot <= winMid || liTop >= winBot) {
+        // Removing the 'inView' class if list item is outside visible window
+        $(this).removeClass("inView");
+      } else if (liTop <= winMid) {
+        // Adding the 'inView' class if list item is in middle of the visible window
+        $(this).addClass("inView");
+      }
+
+      // Finding index of first list item with 'inView' class
+      inViewEq = $(".inView").index() + 1;
+      console.log(inViewEq);
+      // Resetting the classes of '.movie' element based on 'inView' index
+      $(".movie")
+        .attr("class", "")
+        .addClass("movie step-" + inViewEq);
+    });
+    
+    // Checking scroll direction and updating last scroll position
+    if (winTop > lasScrTop) {
+    // Code to execute only if scrolling down
+    } else {
+    // Code to execute only if scrolling up
+    }
+    // Updating last scroll position for next scroll event
+    lasScrTop = winTop;
+  });
+  </script>
+  
+
+<!-- Background music Js -->  
+<script>
+  //  creating a function to toggle play/pause and update the volume icon
+  function toggleAudio() {
+      // Getting the audio player and audio icon elements
+      var audioPlayer = document.getElementById('audio-player');
+      var audioIcon = document.getElementById('audio-icon');
+
+      // Checking if audio player is paused
+      if (audioPlayer.paused) {
+          // If paused,  then play the audio
+          audioPlayer.play();
+          // Changing the icon to volume up when playing
+          audioIcon.textContent = '🔊';    // Volume up icon
+      } else {
+          // If playing, pause the audio
+          audioPlayer.pause();
+          // Change the icon to mute when paused
+          audioIcon.textContent = '🔇';    // Volume off icon
+      }
+  }
+</script>
+
+</body>
+</html>
